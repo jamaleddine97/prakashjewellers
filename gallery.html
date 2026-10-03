@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL9QVCSW');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated Showcase Gallery | Prakash Jewellers</title>
+    <meta name="description" content="Explore the dynamic collection gallery of Prakash Jewellers. Browse through our premium selection of Bridal, Gold, and Diamond jewellery masterpieces.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Gallery Page Custom Styles */
+        .gallery-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(12,60,81,0.04) 0%, rgba(255,255,255,1) 100%);
+        }
+        
+        .gallery-hero .section-title {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 6rem;
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(12, 60, 81, 0.05);
+            background-color: #fafafa;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-item img.loaded {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(12, 60, 81, 0) 40%, rgba(12, 60, 81, 0.85) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(12, 60, 81, 0.12);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            color: #ffffff;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .gallery-item-tag {
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(12, 60, 81, 0.98);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #ffffff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10010;
+        }
+
+        .lightbox-close:hover {
+            color: var(--color-accent);
+        }
+
+        .lightbox-content-wrapper {
+            position: relative;
+            max-width: 90%;
+            max-height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .gallery-lightbox-caption {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .gallery-lightbox-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .gallery-lightbox-tag {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10005;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--color-accent);
+        }
+
+        .lightbox-prev {
+            left: -4rem;
+        }
+
+        .lightbox-next {
+            right: -4rem;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                font-size: 2rem;
+            }
+            .lightbox-prev {
+                left: 1rem;
+            }
+            .lightbox-next {
+                right: 1rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        /* Sub-category pills styling */
+        .gallery-sub-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin: 1.5rem auto 0;
+            max-width: 1000px;
+        }
+
+        .sub-pill {
+            background-color: rgba(12, 60, 81, 0.04);
+            border: 1px solid rgba(12, 60, 81, 0.08);
+            color: var(--color-primary);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            font-family: var(--font-sans);
+        }
+
+        .sub-pill:hover {
+            background-color: rgba(12, 60, 81, 0.08);
+        }
+
+        .sub-pill.active {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-primary);
+            box-shadow: 0 4px 10px rgba(215, 175, 88, 0.2);
+            font-weight: 600;
+        }
+    </style>
+  <script type="module" crossorigin="" src="js/gallery-CahoWl4f.js"></script>
+  <link rel="modulepreload" crossorigin="" href="js/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin="" href="js/lenis-sn1pPV5A.js">
+  <link rel="stylesheet" crossorigin="" href="css/lenis-CV1i7UyZ.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL9QVCSW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="header">
+        <div class="container header-container">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="logo">
+                <a href="index.html"><img src="images/official_logo-BCje6AHy.png" alt="Prakash Jewellers" class="logo-img"></a>
+            </div>
+            
+            <nav class="nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#collections">Collections</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#heritage">Heritage</a></li>
+                    <li><a href="index.html#reels-showcase">Lookbook</a></li>
+                    <li><a href="index.html#promise">Commitment</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="utilities">
+                <a href="index.html#contact" class="btn btn-outline utilities-book-btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Gallery Hero Section -->
+        <section class="gallery-hero">
+            <span class="heritage-label uppercase tracking-widest" style="color: var(--color-accent); font-weight: 600;">Exquisite Creations</span>
+            <h1 class="section-title">Showcase Gallery</h1>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Discover the artistry and detail that makes every Prakash Jewellers design a timeless family heirloom.</p>
+        </section>
+
+        <!-- Gallery Container -->
+        <section class="gallery-container">
+            <!-- Filter Tabs -->
+            <div class="collections-tabs" id="gallery-tabs">
+                <button class="tab-btn active" data-filter="all">All Masterpieces</button>
+                <!-- Dynamic categories loaded here -->
+            </div>
+
+            <!-- Sub-category pills -->
+            <div class="gallery-sub-filters" id="gallery-sub-filters"></div>
+
+            <!-- Image Grid -->
+            <div class="gallery-grid" id="gallery-grid-container">
+                <!-- Dynamic items loaded here -->
+                <div style="grid-column: 1 / -1; text-align: center; padding: 6rem 2rem; color: var(--color-primary);" id="gallery-loader">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; margin-bottom: 1.25rem; color: var(--color-accent);"></i>
+                    <p style="font-family: var(--font-sans); font-size: 1.15rem; opacity: 0.8; letter-spacing: 0.05em; font-weight: 500;">Loading Showcase...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta text-center">
+                <h2 class="footer-tagline">A Legacy You Can Wear.</h2>
+                <a href="index.html#contact" class="btn btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Book a Store Visit</a>
+            </div>
+
+            <div class="footer-grid grid grid-3">
+                <div class="footer-info">
+                    <h4>Store Address</h4>
+                    <p>
+                        <a href="https://maps.app.goo.gl/uZTjKqsQgFrqJTJr6" target="_blank" rel="noopener noreferrer" class="footer-map-link" id="footer-address-link">
+                            Shivarampet, Mysuru
+                        </a>
+                    </p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Phone: <a href="tel:+918212421844" class="footer-link" id="footer-phone-1-link">+91 821 242 1844</a></p>
+                    <p>Mobile: <a href="tel:+918867853355" class="footer-link" id="footer-phone-2-link">+91 88678 53355</a></p>
+                    <p>Instagram: <a href="https://www.instagram.com/prakashjewellersmysuru" target="_blank" rel="noopener noreferrer" class="footer-link">@prakashjewellersmysuru</a></p>
+                </div>
+                <div class="footer-decor">
+                    <img src="images/logo_vertical-WZxPSpD1.png" alt="Prakash Jewellers Logo">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Prakash Jewellers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close lightbox"><i class="fa-solid fa-xmark"></i></button>
+        
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        
+        <div class="lightbox-content-wrapper">
+            <img src="" alt="Showcase Preview" class="lightbox-img" id="lightbox-image">
+            <div class="gallery-lightbox-caption">
+                <span class="gallery-lightbox-tag" id="lightbox-tag">Bridal Collection</span>
+                <h3 class="gallery-lightbox-title" id="lightbox-title">Gold Haaram</h3>
+            </div>
+        </div>
+        
+        <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Script Entry -->
+
+
+</body></html>

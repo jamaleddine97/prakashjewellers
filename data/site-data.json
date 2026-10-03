@@ -1,0 +1,239 @@
+{
+  "settings": {
+    "hero_video_url": "media/banner-video.mp4",
+    "brand_tagline": "One of Mysore’s most trusted jewellery houses, blending traditional artistry with refined modern design.",
+    "story_1_title": "A Legacy Cast in Gold",
+    "story_1_desc": "It began in 1964 - not just as a jewellery store, but as a promise. A promise of purity, precision, and pieces that would pass from one generation to the next. What started as a symbol of quality, craftsmanship, and tradition in the heart of Mysuru has grown into one of the city's most beloved jewellery houses shaped by decades of trust and an unwavering commitment to the art of fine jewellery. Today, Prakash Jewellers stands as a living heirloom itself: a family name woven into the fabric of Mysuru's culture.",
+    "story_2_title": "Rooted in Mysore's Cultural Soul",
+    "story_2_desc": "Founded in 1964 with an unwavering commitment to purity and craft, Prakash Jewellers has spent sixty years crafting jewellery that quietly becomes part of your family's story present at your weddings, your celebrations, your milestones. Jewellery that is not simply worn, but remembered.",
+    "footer_address": "Shivarampet, Mysuru",
+    "footer_map_url": "https://maps.app.goo.gl/uZTjKqsQgFrqJTJr6",
+    "footer_phone_1": "+91 821 242 1844",
+    "footer_phone_2": "+91 88678 53355",
+    "story_1_img_1": "images/bangles_1.webp",
+    "story_1_img_1_label": "Certified Purity",
+    "story_1_img_2": "images/haaram_1.webp",
+    "story_1_img_2_label": "Master Craftsmanship",
+    "feature_1_icon": "images/bis_hallmark.png",
+    "feature_1_text": "Hallmarked Gold & Certified Diamonds",
+    "feature_2_icon": "images/icons_2.jpg",
+    "feature_2_text": "Generations of Jewellery Making",
+    "feature_3_icon": "images/icons_3.jpg",
+    "feature_3_text": "Ethical Sourcing & Transparency"
+  },
+  "categories": [
+    {
+      "id": "cat_bridal_jewellery",
+      "name": "Bridal Jewellery",
+      "filter_name": "bridal",
+      "tag": "Bridal Showcase",
+      "cover_image_url": "images/bridal.webp",
+      "description": "<strong>Crafted for your most significant milestone.</strong> Grand chokers, ornate necklaces, and complete sets featuring certified diamonds and rubies, designed to make your wedding day truly unforgettable.",
+      "gallery_images": [
+  
+      ]
+    },
+    {
+      "id": "cat_temple_jewellery",
+      "name": "Temple Jewellery",
+      "filter_name": "bridal",
+      "tag": "Heritage Collection",
+      "cover_image_url": "images/temple.webp",
+      "description": "<strong>Six decades of Mysore's sacred craft.</strong> Inspired by historic royal courts, featuring intricate nakshi work, divine motifs, and antique gold finishes that carry the soul of tradition.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_bangles",
+      "name": "Gold Bangles",
+      "filter_name": "gold",
+      "tag": "Heritage Bangles",
+      "cover_image_url": "images/bangles.webp",
+      "description": "<strong>Adorn your wrists with generational artistry.</strong> From heavy nakshi and temple kadas representing Mysuru's royalty to sleek contemporary gold bangles crafted for daily elegance.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_necklaces",
+      "name": "Gold Necklaces",
+      "filter_name": "gold bridal",
+      "tag": "Precious Neckpieces",
+      "cover_image_url": "images/gold_necklace_1.jpg",
+      "hover_image_url": "images/gold_necklace_2.jpg",
+      "description": "<strong>A striking statement of beauty and grace.</strong> Ranging from traditional, heavy-layered harams to modern gold chokers, handcrafted to rest elegantly and catch the light beautifully.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_jewellery_sets",
+      "name": "Gold Jewellery Sets",
+      "filter_name": "bridal gold",
+      "tag": "Grand Sets",
+      "cover_image_url": "images/gold_jewelleryset_1.jpg",
+      "hover_image_url": "images/gold_jewelleryset_2.jpg",
+      "description": "<strong>Exquisite coordination of gold and gems.</strong> Masterfully matched necklaces and matching earrings, hand-selected to create a unified, breathtaking bridal and festive statement.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_maang_tikka",
+      "name": "Maang Tikka",
+      "filter_name": "bridal",
+      "tag": "Traditional Forehead Ornament",
+      "cover_image_url": "images/maangtikka.webp",
+      "hover_image_url": "",
+      "description": "<strong>Frame your bridal radiance with historic style.</strong> Exquisite, handcrafted forehead medallions set in pure gold, diamonds, and precious gemstones that capture the absolute grace of heritage bridal styling.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_waist_chain",
+      "name": "Waist Chain",
+      "filter_name": "bridal",
+      "tag": "Traditional Waist Ornament",
+      "cover_image_url": "images/waistchain.webp",
+      "hover_image_url": "",
+      "description": "<strong>Embellish your bridal ensemble with heritage grace.</strong> Beautifully sculpted gold waistbands (vaddanams) featuring intricate carvings of divine motifs and peacock designs, finished with hanging pearls.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_chains",
+      "name": "Gold Chains",
+      "filter_name": "gold",
+      "tag": "Classic Chains",
+      "cover_image_url": "images/goldchains.webp",
+      "hover_image_url": "",
+      "description": "<strong>Pure, solid gold chains with exceptional finish.</strong> From thick traditional links to delicate modern structures, our chains represent durability, value, and timeless style.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_rings",
+      "name": "Gold Rings",
+      "filter_name": "gold everyday",
+      "tag": "Signature Bands",
+      "cover_image_url": "images/gold_rings_1.jpg",
+      "hover_image_url": "",
+      "description": "<strong>Tokens of love, achievement, and promise.</strong> Beautifully crafted gold rings representing eternity, fine detail, and everyday luxury in 22k gold.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_gold_earrings",
+      "name": "Gold Earrings",
+      "filter_name": "gold",
+      "tag": "Daily Accent",
+      "cover_image_url": "images/gold_earrings_1.jpg",
+      "hover_image_url": "images/gold_earrings_2.jpg",
+      "description": "<strong>Frame your face in pure luxury.</strong> Elegant gold studs, traditional jhumkas, lightweight drops, and designer hoops designed to complement both festive and everyday moments.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_diamond_bangles",
+      "name": "Diamond Bangles",
+      "filter_name": "diamonds",
+      "tag": "Precious Brilliance",
+      "cover_image_url": "images/diamond_bangles_1.jpg",
+      "hover_image_url": "images/diamond_bangles_2.jpg",
+      "description": "<strong>Wrap your wrists in extraordinary light.</strong> Hand-set VVS-quality diamonds set in white, yellow, or rose gold bands, combining timeless fire with contemporary design.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_diamond_earrings",
+      "name": "Diamond Earrings",
+      "filter_name": "diamonds",
+      "tag": "Precious Brilliance",
+      "cover_image_url": "images/diamond_earrings_1.jpg",
+      "hover_image_url": "",
+      "description": "<strong>Reflect light with every gesture.</strong> Certified diamond studs, hoops, and designer drops graded for clarity and cut to offer maximum sparkle.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_diamond_jewellery_sets",
+      "name": "Diamond Jewellery Sets",
+      "filter_name": "diamonds",
+      "tag": "Precious Brilliance",
+      "cover_image_url": "images/diamond_jewelleryset_1.jpg",
+      "hover_image_url": "images/diamond_jewelleryset_2.jpg",
+      "description": "<strong>Unified elegance for grand moments.</strong> Masterfully coordinated necklace and earring sets, matching in cut, clarity, and design to create a breathtaking presence.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_diamond_necklaces",
+      "name": "Diamond Necklaces",
+      "filter_name": "diamonds",
+      "tag": "Precious Brilliance",
+      "cover_image_url": "images/diamond_necklace_1.jpg",
+      "hover_image_url": "images/diamond_necklace_2.jpg",
+      "description": "<strong>A striking statement of certified luxury.</strong> Modern collar chokers, classic diamond strings, and elaborate multi-tier necklaces that capture the eye beautifully.",
+      "gallery_images": [
+       
+      ]
+    },
+    {
+      "id": "cat_diamond_rings",
+      "name": "Diamond Rings",
+      "filter_name": "diamonds",
+      "tag": "Precious Brilliance",
+      "cover_image_url": "images/diamond_ring_1.jpg",
+      "hover_image_url": "",
+      "description": "<strong>Tokens of love, promise, and achievement.</strong> Exquisite solitaire engagement rings, stackable diamond bands, and cocktail rings crafted with certified stones.",
+      "gallery_images": [
+       
+      ]
+    },
+    {
+      "id": "cat_daily_wear",
+      "name": "Daily Wear",
+      "filter_name": "everyday",
+      "tag": "Everyday Luxury",
+      "cover_image_url": "images/dailywear.webp",
+      "hover_image_url": "",
+      "description": "<strong>Lightweight elegance crafted for daily routine.</strong> Comfortable bangles, minimal pendants, and simple chains that combine lasting durability with a refined look.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_mens_gold_chains",
+      "name": "Men's Gold Chains",
+      "filter_name": "everyday gold",
+      "tag": "Men's Edit",
+      "cover_image_url": "images/mens_chains_1.jpg",
+      "hover_image_url": "images/mens_chains_2.jpg",
+      "description": "<strong>Bold style and refined character.</strong> Solid gold chains of heavy weight and impeccable design, perfect for daily styling and strong presence.",
+      "gallery_images": [
+        
+      ]
+    },
+    {
+      "id": "cat_mens_rings",
+      "name": "Men's Rings",
+      "filter_name": "everyday gold",
+      "tag": "Men's Edit",
+      "cover_image_url": "images/mens_rings_1.jpg",
+      "hover_image_url": "images/mens_rings_2.jpg",
+      "description": "<strong>Strong statements of success and commitment.</strong> Heavy gold signet rings, textured bands, and gemstone-accented rings designed for the modern gentleman.",
+      "gallery_images": [
+        
+      ]
+    }
+  ]
+}
